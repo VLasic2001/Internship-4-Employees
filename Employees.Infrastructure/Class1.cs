@@ -6,22 +6,8 @@ using System.Threading.Tasks;
 
 namespace Employees.Infrastructure
 {
-    public class EmployeeRepository
+    public class Class1
     {
-        private List<Employee> _employeeRepository;
 
-        public EmployeeRepository()
-        {
-            SeedData();
-        }
-
-        private void SeedData()
-        {
-            _employeeRepository = new List<Employee>()
-            {
-                new Employee()
-
-            };
-        }
     }
 }
