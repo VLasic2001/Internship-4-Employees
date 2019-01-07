@@ -25,5 +25,7 @@ namespace Employees.Domain
                 new Employee("Filip", "Filipovic", new DateTime(2001, 9, 16), "3008576921", Jobs.Accountant)
             };
         }
+
+        public List<Employee> GetAllItems() => Employees;
     }
 }
