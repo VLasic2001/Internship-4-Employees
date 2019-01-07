@@ -17,7 +17,7 @@ namespace Employees.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddEmployeeForm(new EmployeeRepository()));
+            Application.Run(new MenuForm());
         }
     }
 }
