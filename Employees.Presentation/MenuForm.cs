@@ -46,5 +46,11 @@ namespace Employees.Presentation
             var addProject = new AddProjectForm(ProjectRepository, EmployeeRepository);
             addProject.ShowDialog();
         }
+
+        private void ListProjects(object sender, EventArgs e)
+        {
+            var listOfProjects = new ListOfProjectsForm(ProjectRepository);
+            listOfProjects.ShowDialog();
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.deleteEmployeeButton = new System.Windows.Forms.Button();
             this.menuLabel = new System.Windows.Forms.Label();
             this.AddProjectButton = new System.Windows.Forms.Button();
+            this.ListOfProjectsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addEmployeeButton
@@ -79,17 +80,28 @@
             // 
             this.AddProjectButton.Location = new System.Drawing.Point(549, 180);
             this.AddProjectButton.Name = "AddProjectButton";
-            this.AddProjectButton.Size = new System.Drawing.Size(143, 23);
+            this.AddProjectButton.Size = new System.Drawing.Size(158, 23);
             this.AddProjectButton.TabIndex = 4;
             this.AddProjectButton.Text = "Add project";
             this.AddProjectButton.UseVisualStyleBackColor = true;
             this.AddProjectButton.Click += new System.EventHandler(this.AddProject);
+            // 
+            // ListOfProjectsButton
+            // 
+            this.ListOfProjectsButton.Location = new System.Drawing.Point(549, 151);
+            this.ListOfProjectsButton.Name = "ListOfProjectsButton";
+            this.ListOfProjectsButton.Size = new System.Drawing.Size(158, 23);
+            this.ListOfProjectsButton.TabIndex = 5;
+            this.ListOfProjectsButton.Text = "List of employees";
+            this.ListOfProjectsButton.UseVisualStyleBackColor = true;
+            this.ListOfProjectsButton.Click += new System.EventHandler(this.ListProjects);
             // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ListOfProjectsButton);
             this.Controls.Add(this.AddProjectButton);
             this.Controls.Add(this.menuLabel);
             this.Controls.Add(this.deleteEmployeeButton);
@@ -109,5 +121,6 @@
         private System.Windows.Forms.Button deleteEmployeeButton;
         private System.Windows.Forms.Label menuLabel;
         private System.Windows.Forms.Button AddProjectButton;
+        private System.Windows.Forms.Button ListOfProjectsButton;
     }
 }

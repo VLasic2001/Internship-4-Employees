@@ -32,8 +32,8 @@ namespace Employees.Presentation
         private void SaveProject(object sender, EventArgs e)
         {
             EmployeesAndWorkHoursCalculator();
-            //Project = new Project(addProjectNameTextBox.Text, );
-            Project = ProjectRepository.Projects[1];
+            Project = new Project(addProjectNameTextBox.Text, EmployeesOnProjectAndWorkHours, AddProjectStartDateTimePicker.Value, addProjectFinishDateTimePicker.Value);
+            ProjectRepository.Projects.Add(Project);
             MessageBox.Show(@"Project successfully added.");
             Close();
         }
@@ -43,7 +43,7 @@ namespace Employees.Presentation
             var employeesOnProject = addProjectEmployeeListCheckedListBox.CheckedItems.OfType<Employee>().ToList();
             foreach (var employee in employeesOnProject)
             {
-                var employeeHoursOnProject = new EmployeeHoursOnProjectForm(employee, Project);
+                var employeeHoursOnProject = new EmployeeHoursOnProjectForm(employee);
                 employeeHoursOnProject.ShowDialog();
                 EmployeesOnProjectAndWorkHours.Add(employee, EmployeeHoursOnProjectForm.HoursOnProject);
             }

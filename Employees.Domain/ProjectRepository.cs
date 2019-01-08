@@ -28,5 +28,7 @@ namespace Employees.Domain
                     new DateTime(2019, 6, 10))
             };
         }
+
+        public List<Project> GetAllItems() => Projects;
     }
 }

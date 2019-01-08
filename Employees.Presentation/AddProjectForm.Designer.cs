@@ -30,7 +30,7 @@
         {
             this.addProjectNameTextBox = new System.Windows.Forms.TextBox();
             this.addProjesNameLabel = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.AddProjectStartDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.projectStartDateLabel = new System.Windows.Forms.Label();
             this.addProjectFinishDateLabel = new System.Windows.Forms.Label();
             this.addProjectFinishDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -55,12 +55,12 @@
             this.addProjesNameLabel.TabIndex = 1;
             this.addProjesNameLabel.Text = "Project name";
             // 
-            // dateTimePicker1
+            // AddProjectStartDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(126, 184);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.AddProjectStartDateTimePicker.Location = new System.Drawing.Point(126, 184);
+            this.AddProjectStartDateTimePicker.Name = "AddProjectStartDateTimePicker";
+            this.AddProjectStartDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.AddProjectStartDateTimePicker.TabIndex = 2;
             // 
             // projectStartDateLabel
             // 
@@ -126,7 +126,7 @@
             this.Controls.Add(this.addProjectFinishDateTimePicker);
             this.Controls.Add(this.addProjectFinishDateLabel);
             this.Controls.Add(this.projectStartDateLabel);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.AddProjectStartDateTimePicker);
             this.Controls.Add(this.addProjesNameLabel);
             this.Controls.Add(this.addProjectNameTextBox);
             this.Name = "AddProjectForm";
@@ -140,7 +140,7 @@
 
         private System.Windows.Forms.TextBox addProjectNameTextBox;
         private System.Windows.Forms.Label addProjesNameLabel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker AddProjectStartDateTimePicker;
         private System.Windows.Forms.Label projectStartDateLabel;
         private System.Windows.Forms.Label addProjectFinishDateLabel;
         private System.Windows.Forms.DateTimePicker addProjectFinishDateTimePicker;

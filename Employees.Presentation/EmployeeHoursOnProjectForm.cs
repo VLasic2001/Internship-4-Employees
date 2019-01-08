@@ -16,11 +16,11 @@ namespace Employees.Presentation
         public static int HoursOnProject { get; set; }
         public static bool WasSomethingInput { get; set; }
 
-        public EmployeeHoursOnProjectForm(Employee employee, Project project) 
+        public EmployeeHoursOnProjectForm(Employee employee) 
         {
             InitializeComponent();
             WasSomethingInput = false;
-            HoursOnProjectLabel.Text = $@"Enter amount of hours {employee} works on {project} per week";
+            HoursOnProjectLabel.Text = $@"Enter amount of hours {employee} works on this project per week";
         }
 
         private void Save(object sender, EventArgs e)
