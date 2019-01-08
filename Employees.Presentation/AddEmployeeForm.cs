@@ -24,7 +24,7 @@ namespace Employees.Presentation
             employeeJobComboBox.SelectedIndex = 0;
         }
 
-        private void Save(object sender, EventArgs e)
+        private void SaveEmployee(object sender, EventArgs e)
         {
             CreateEmployee();
             EmployeeRepository.Employees.Add(Employee);

@@ -14,11 +14,13 @@ namespace Employees.Presentation
     public partial class MenuForm : Form
     {
         public EmployeeRepository EmployeeRepository { get; set; }
+        public ProjectRepository ProjectRepository { get; set; }
 
         public MenuForm()
         {
             InitializeComponent();
             EmployeeRepository = new EmployeeRepository();
+            ProjectRepository = new ProjectRepository();
         }
 
         private void AddEmployee(object sender, EventArgs e)
@@ -37,6 +39,12 @@ namespace Employees.Presentation
         {
             var deleteEmployees = new DeleteEmployeeForm(EmployeeRepository);
             deleteEmployees.ShowDialog();
+        }
+
+        private void AddProject(object sender, EventArgs e)
+        {
+            var addProject = new AddProjectForm(ProjectRepository, EmployeeRepository);
+            addProject.ShowDialog();
         }
     }
 }
