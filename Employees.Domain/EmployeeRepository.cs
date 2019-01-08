@@ -18,7 +18,7 @@ namespace Employees.Domain
 
         private void SeedData()
         {
-            Employees=new List<Employee>()
+            Employees = new List<Employee>
             {
                 new Employee("Vedran", "Lasic", new DateTime(2001, 6, 10), "12345678901", Jobs.Programmer),
                 new Employee("Luka", "Lukanovic Lukic", new DateTime(2001, 10, 19), "98765432109", Jobs.Designer),
@@ -27,5 +27,7 @@ namespace Employees.Domain
         }
 
         public List<Employee> GetAllItems() => Employees;
+
+        public void RemoveEmployee(Employee employeeToDelete) => Employees.Remove(employeeToDelete);
     }
 }

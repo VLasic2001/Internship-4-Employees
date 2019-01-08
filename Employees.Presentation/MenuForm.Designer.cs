@@ -62,6 +62,7 @@
             this.deleteEmployeeButton.TabIndex = 2;
             this.deleteEmployeeButton.Text = "Delete Employee";
             this.deleteEmployeeButton.UseVisualStyleBackColor = true;
+            this.deleteEmployeeButton.Click += new System.EventHandler(this.DeleteEmployee);
             // 
             // menuLabel
             // 

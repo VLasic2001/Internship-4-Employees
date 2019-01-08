@@ -25,14 +25,18 @@ namespace Employees.Presentation
         {
             var addEmployee = new AddEmployeeForm(EmployeeRepository);
             addEmployee.ShowDialog();
-            EmployeeRepository.Employees.Add(
-            addEmployee.EmployeeRepository.Employees[addEmployee.EmployeeRepository.Employees.Count - 1]);
         }
 
         private void ListEmployees(object sender, EventArgs e)
         {
             var listEmployees =  new ListOfEmployeesForm(EmployeeRepository);
             listEmployees.ShowDialog();
+        }
+
+        private void DeleteEmployee(object sender, EventArgs e)
+        {
+            var deleteEmployees = new DeleteEmployeeForm(EmployeeRepository);
+            deleteEmployees.ShowDialog();
         }
     }
 }

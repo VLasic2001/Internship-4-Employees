@@ -52,6 +52,12 @@
     <Compile Include="AddEmployeeForm.Designer.cs">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteEmployeeForm.Designer.cs">
+      <DependentUpon>DeleteEmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListOfEmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteEmployeeForm.resx">
+      <DependentUpon>DeleteEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListOfEmployeesForm.resx">
       <DependentUpon>ListOfEmployeesForm.cs</DependentUpon>

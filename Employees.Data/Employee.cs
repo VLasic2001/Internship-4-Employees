@@ -22,5 +22,10 @@ namespace Employees.Data
             Oib = oib;
             Job = job;
         }
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}, {DateOfBirth}, {Oib}, {Job}";
+        }
     }
 }
