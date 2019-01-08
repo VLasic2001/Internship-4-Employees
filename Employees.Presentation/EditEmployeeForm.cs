@@ -38,7 +38,7 @@ namespace Employees.Presentation
         {
             EditedEmployee = new Employee(
                 editEmployeeFirstNameTextBox.Text,
-                editEmployeeLastNameLabel.Text,
+                editEmployeeLastNameTextBox.Text,
                 editEmployeeDateTimePicker.Value,
                 editEmployeeOibTextBox.Text,
                 (Jobs)editEmployeeJobComboBox.SelectedIndex
