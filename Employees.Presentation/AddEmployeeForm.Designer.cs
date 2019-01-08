@@ -46,21 +46,21 @@
             // 
             this.employeeFirstNameTextBox.Location = new System.Drawing.Point(388, 80);
             this.employeeFirstNameTextBox.Name = "employeeFirstNameTextBox";
-            this.employeeFirstNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.employeeFirstNameTextBox.Size = new System.Drawing.Size(121, 20);
             this.employeeFirstNameTextBox.TabIndex = 0;
             // 
             // employeeLastNameTextBox
             // 
-            this.employeeLastNameTextBox.Location = new System.Drawing.Point(401, 151);
+            this.employeeLastNameTextBox.Location = new System.Drawing.Point(388, 156);
             this.employeeLastNameTextBox.Name = "employeeLastNameTextBox";
-            this.employeeLastNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.employeeLastNameTextBox.Size = new System.Drawing.Size(121, 20);
             this.employeeLastNameTextBox.TabIndex = 1;
             // 
             // employeeOibTextBox
             // 
-            this.employeeOibTextBox.Location = new System.Drawing.Point(410, 304);
+            this.employeeOibTextBox.Location = new System.Drawing.Point(388, 304);
             this.employeeOibTextBox.Name = "employeeOibTextBox";
-            this.employeeOibTextBox.Size = new System.Drawing.Size(100, 20);
+            this.employeeOibTextBox.Size = new System.Drawing.Size(121, 20);
             this.employeeOibTextBox.TabIndex = 2;
             // 
             // employeeDateTimePicker
@@ -78,7 +78,7 @@
             "Programmer",
             "Designer",
             "Accountant"});
-            this.employeeJobComboBox.Location = new System.Drawing.Point(410, 372);
+            this.employeeJobComboBox.Location = new System.Drawing.Point(388, 372);
             this.employeeJobComboBox.Name = "employeeJobComboBox";
             this.employeeJobComboBox.Size = new System.Drawing.Size(121, 21);
             this.employeeJobComboBox.TabIndex = 4;
@@ -95,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(330, 160);
+            this.label2.Location = new System.Drawing.Point(318, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 6;
@@ -122,7 +122,7 @@
             // employeeJobLabel
             // 
             this.employeeJobLabel.AutoSize = true;
-            this.employeeJobLabel.Location = new System.Drawing.Point(351, 375);
+            this.employeeJobLabel.Location = new System.Drawing.Point(330, 375);
             this.employeeJobLabel.Name = "employeeJobLabel";
             this.employeeJobLabel.Size = new System.Drawing.Size(44, 13);
             this.employeeJobLabel.TabIndex = 9;

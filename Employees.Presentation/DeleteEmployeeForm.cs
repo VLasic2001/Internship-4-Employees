@@ -36,5 +36,6 @@ namespace Employees.Presentation
             EmployeeRepository.RemoveEmployee(employeeToDelete);
             Close();
         }
+
     }
 }

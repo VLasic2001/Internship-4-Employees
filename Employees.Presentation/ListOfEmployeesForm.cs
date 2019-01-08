@@ -28,5 +28,17 @@ namespace Employees.Presentation
                 ListOfEmployeesCheckedListBox.Items.Add(employee);
             }
         }
+
+        private void EditEmployee(object sender, EventArgs e)
+        {
+            var editEmployee = new EditEmployeeForm(EmployeeRepository, (Employee)ListOfEmployeesCheckedListBox.SelectedItem);
+            editEmployee.ShowDialog();
+            ListOfEmployeesCheckedListBox.Items.Clear();
+            Employees = EmployeeRepository.GetAllItems();
+            foreach (var employee in Employees)
+            {
+                ListOfEmployeesCheckedListBox.Items.Add(employee);
+            }
+        }
     }
 }

@@ -50,6 +50,7 @@
             this.editEmployeeButton.TabIndex = 1;
             this.editEmployeeButton.Text = "Edit Employee";
             this.editEmployeeButton.UseVisualStyleBackColor = true;
+            this.editEmployeeButton.Click += new System.EventHandler(this.EditEmployee);
             // 
             // titleLabel
             // 
