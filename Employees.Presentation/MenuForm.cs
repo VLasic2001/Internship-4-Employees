@@ -52,5 +52,11 @@ namespace Employees.Presentation
             var listOfProjects = new ListOfProjectsForm(ProjectRepository);
             listOfProjects.ShowDialog();
         }
+
+        private void DeleteProject(object sender, EventArgs e)
+        {
+            var deleteProject = new DeleteProjectForm(ProjectRepository);
+            deleteProject.ShowDialog();
+        }
     }
 }

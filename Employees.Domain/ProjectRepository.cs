@@ -30,5 +30,7 @@ namespace Employees.Domain
         }
 
         public List<Project> GetAllItems() => Projects;
+
+        public void RemoveProject(Project projectToDelete) => Projects.Remove(projectToDelete);
     }
 }

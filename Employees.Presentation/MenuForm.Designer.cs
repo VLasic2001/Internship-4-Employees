@@ -34,6 +34,7 @@
             this.menuLabel = new System.Windows.Forms.Label();
             this.AddProjectButton = new System.Windows.Forms.Button();
             this.ListOfProjectsButton = new System.Windows.Forms.Button();
+            this.DeleteProjectButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addEmployeeButton
@@ -96,11 +97,22 @@
             this.ListOfProjectsButton.UseVisualStyleBackColor = true;
             this.ListOfProjectsButton.Click += new System.EventHandler(this.ListProjects);
             // 
+            // DeleteProjectButton
+            // 
+            this.DeleteProjectButton.Location = new System.Drawing.Point(549, 210);
+            this.DeleteProjectButton.Name = "DeleteProjectButton";
+            this.DeleteProjectButton.Size = new System.Drawing.Size(158, 23);
+            this.DeleteProjectButton.TabIndex = 6;
+            this.DeleteProjectButton.Text = "Delete project";
+            this.DeleteProjectButton.UseVisualStyleBackColor = true;
+            this.DeleteProjectButton.Click += new System.EventHandler(this.DeleteProject);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteProjectButton);
             this.Controls.Add(this.ListOfProjectsButton);
             this.Controls.Add(this.AddProjectButton);
             this.Controls.Add(this.menuLabel);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.Label menuLabel;
         private System.Windows.Forms.Button AddProjectButton;
         private System.Windows.Forms.Button ListOfProjectsButton;
+        private System.Windows.Forms.Button DeleteProjectButton;
     }
 }
