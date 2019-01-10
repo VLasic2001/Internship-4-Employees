@@ -49,7 +49,7 @@ namespace Employees.Presentation
 
         private void ListProjects(object sender, EventArgs e)
         {
-            var listOfProjects = new ListOfProjectsForm(ProjectRepository);
+            var listOfProjects = new ListOfProjectsForm(ProjectRepository, EmployeeRepository);
             listOfProjects.ShowDialog();
         }
 

@@ -49,6 +49,7 @@
             this.EditProjectButton.TabIndex = 1;
             this.EditProjectButton.Text = "Edit project";
             this.EditProjectButton.UseVisualStyleBackColor = true;
+            this.EditProjectButton.Click += new System.EventHandler(this.EditProject);
             // 
             // ListOfProjectsTitleLabel
             // 

@@ -13,7 +13,12 @@ namespace Employees.Presentation
 {
     public partial class EmployeeHoursOnProjectForm : Form
     {
-        public static int HoursOnProject { get; set; }
+        private int _hoursOnProject { get; set; }
+        public int HoursOnProject
+        {
+            get => _hoursOnProject;
+            set => _hoursOnProject = value;
+        }
         public static bool WasSomethingInput { get; set; }
 
         public EmployeeHoursOnProjectForm(Employee employee) 
@@ -25,7 +30,7 @@ namespace Employees.Presentation
 
         private void Save(object sender, EventArgs e)
         {
-            HoursOnProject = int.Parse(HoursOnProjectTextBox.Text);
+            _hoursOnProject = int.Parse(HoursOnProjectTextBox.Text);
             Close();
         }
     }
