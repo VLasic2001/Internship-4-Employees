@@ -93,7 +93,7 @@
             this.ListOfProjectsButton.Name = "ListOfProjectsButton";
             this.ListOfProjectsButton.Size = new System.Drawing.Size(158, 23);
             this.ListOfProjectsButton.TabIndex = 5;
-            this.ListOfProjectsButton.Text = "List of employees";
+            this.ListOfProjectsButton.Text = "List of projects";
             this.ListOfProjectsButton.UseVisualStyleBackColor = true;
             this.ListOfProjectsButton.Click += new System.EventHandler(this.ListProjects);
             // 

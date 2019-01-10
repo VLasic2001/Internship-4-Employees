@@ -75,8 +75,7 @@ namespace Employees.Presentation
             {
                 var employeeHoursOnProject = new EmployeeHoursOnProjectForm(employee);
                 employeeHoursOnProject.ShowDialog();
-                var hoursOnProject = employeeHoursOnProject.HoursOnProject;
-                EmployeesOnProjectAndWorkHours.Add(employee, hoursOnProject);
+                EmployeesOnProjectAndWorkHours.Add(employee, employeeHoursOnProject.HoursOnProject);
             }
         }
     }

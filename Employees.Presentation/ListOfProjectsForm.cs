@@ -42,5 +42,13 @@ namespace Employees.Presentation
                 ListOfProjectsListBox.Items.Add(project);
             }
         }
+
+        private void Detalis(object sender, EventArgs e)
+        {
+            {
+                var details = new ProjectDetailsForm(EmployeeRepository, (Project)ListOfProjectsListBox.SelectedItem);
+                details.ShowDialog();
+            }
+        }
     }
 }
