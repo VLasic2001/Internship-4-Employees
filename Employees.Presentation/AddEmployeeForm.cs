@@ -16,17 +16,27 @@ namespace Employees.Presentation
     {
         public EmployeeRepository EmployeeRepository { get; set; }
         public Employee Employee { get; set; }
+        public ProjectRepository ProjectRepository { get; set; }
+        public List<Project> Projects { get; set; }
 
-        public AddEmployeeForm(EmployeeRepository employeeRepository)
+        public AddEmployeeForm(EmployeeRepository employeeRepository, ProjectRepository projectRepository)
         {
             InitializeComponent();
             EmployeeRepository = employeeRepository;
+            ProjectRepository = projectRepository;
             employeeJobComboBox.SelectedIndex = 0;
+            EmployeesProjectsCheckedListBox.Items.Clear();
+            Projects = ProjectRepository.GetAllItems();
+            foreach (var project in Projects)
+            {
+                EmployeesProjectsCheckedListBox.Items.Add(project);
+            }
         }
 
         private void SaveEmployee(object sender, EventArgs e)
         {
             CreateEmployee();
+            EmployeesAndWorkHoursCalculator();
             EmployeeRepository.Employees.Add(Employee);
             Close();
         }
@@ -40,6 +50,18 @@ namespace Employees.Presentation
                 employeeOibTextBox.Text,
                 (Jobs)employeeJobComboBox.SelectedIndex
             );
+        }
+
+        private void EmployeesAndWorkHoursCalculator()
+        {
+            var employeesProject = EmployeesProjectsCheckedListBox.CheckedItems.OfType<Project>().ToList();
+            foreach (var project in employeesProject)
+            {
+                var employeeHoursOnProject = new EmployeeHoursOnProjectForm(Employee);
+                employeeHoursOnProject.ShowDialog();
+                project.EmployeesOnProjectAndWorkHours.Remove(Employee);
+                project.EmployeesOnProjectAndWorkHours.Add(Employee, employeeHoursOnProject.HoursOnProject);
+            }
         }
     }
 }

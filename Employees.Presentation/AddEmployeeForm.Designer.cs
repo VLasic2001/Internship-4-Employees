@@ -40,32 +40,34 @@
             this.employeeJobLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.EmployeesProjectsCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.EmployeeProjectsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // employeeFirstNameTextBox
             // 
-            this.employeeFirstNameTextBox.Location = new System.Drawing.Point(388, 80);
+            this.employeeFirstNameTextBox.Location = new System.Drawing.Point(104, 76);
             this.employeeFirstNameTextBox.Name = "employeeFirstNameTextBox";
-            this.employeeFirstNameTextBox.Size = new System.Drawing.Size(121, 20);
+            this.employeeFirstNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.employeeFirstNameTextBox.TabIndex = 0;
             // 
             // employeeLastNameTextBox
             // 
-            this.employeeLastNameTextBox.Location = new System.Drawing.Point(388, 156);
+            this.employeeLastNameTextBox.Location = new System.Drawing.Point(104, 152);
             this.employeeLastNameTextBox.Name = "employeeLastNameTextBox";
-            this.employeeLastNameTextBox.Size = new System.Drawing.Size(121, 20);
+            this.employeeLastNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.employeeLastNameTextBox.TabIndex = 1;
             // 
             // employeeOibTextBox
             // 
-            this.employeeOibTextBox.Location = new System.Drawing.Point(388, 304);
+            this.employeeOibTextBox.Location = new System.Drawing.Point(104, 300);
             this.employeeOibTextBox.Name = "employeeOibTextBox";
-            this.employeeOibTextBox.Size = new System.Drawing.Size(121, 20);
+            this.employeeOibTextBox.Size = new System.Drawing.Size(200, 20);
             this.employeeOibTextBox.TabIndex = 2;
             // 
             // employeeDateTimePicker
             // 
-            this.employeeDateTimePicker.Location = new System.Drawing.Point(388, 232);
+            this.employeeDateTimePicker.Location = new System.Drawing.Point(104, 228);
             this.employeeDateTimePicker.Name = "employeeDateTimePicker";
             this.employeeDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.employeeDateTimePicker.TabIndex = 3;
@@ -78,15 +80,15 @@
             "Programmer",
             "Designer",
             "Accountant"});
-            this.employeeJobComboBox.Location = new System.Drawing.Point(388, 372);
+            this.employeeJobComboBox.Location = new System.Drawing.Point(104, 368);
             this.employeeJobComboBox.Name = "employeeJobComboBox";
-            this.employeeJobComboBox.Size = new System.Drawing.Size(121, 21);
+            this.employeeJobComboBox.Size = new System.Drawing.Size(200, 21);
             this.employeeJobComboBox.TabIndex = 4;
             // 
             // employeeFirstNameLabel
             // 
             this.employeeFirstNameLabel.AutoSize = true;
-            this.employeeFirstNameLabel.Location = new System.Drawing.Point(319, 83);
+            this.employeeFirstNameLabel.Location = new System.Drawing.Point(25, 79);
             this.employeeFirstNameLabel.Name = "employeeFirstNameLabel";
             this.employeeFirstNameLabel.Size = new System.Drawing.Size(55, 13);
             this.employeeFirstNameLabel.TabIndex = 5;
@@ -95,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(318, 156);
+            this.label2.Location = new System.Drawing.Point(25, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 6;
@@ -104,7 +106,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(351, 311);
+            this.label3.Location = new System.Drawing.Point(25, 303);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 7;
@@ -113,7 +115,7 @@
             // employeeDateofBirthLabel
             // 
             this.employeeDateofBirthLabel.AutoSize = true;
-            this.employeeDateofBirthLabel.Location = new System.Drawing.Point(309, 232);
+            this.employeeDateofBirthLabel.Location = new System.Drawing.Point(25, 228);
             this.employeeDateofBirthLabel.Name = "employeeDateofBirthLabel";
             this.employeeDateofBirthLabel.Size = new System.Drawing.Size(65, 13);
             this.employeeDateofBirthLabel.TabIndex = 8;
@@ -122,7 +124,7 @@
             // employeeJobLabel
             // 
             this.employeeJobLabel.AutoSize = true;
-            this.employeeJobLabel.Location = new System.Drawing.Point(330, 375);
+            this.employeeJobLabel.Location = new System.Drawing.Point(25, 371);
             this.employeeJobLabel.Name = "employeeJobLabel";
             this.employeeJobLabel.Size = new System.Drawing.Size(44, 13);
             this.employeeJobLabel.TabIndex = 9;
@@ -130,7 +132,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(675, 200);
+            this.saveButton.Location = new System.Drawing.Point(518, 385);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 10;
@@ -148,11 +150,30 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Add Employee";
             // 
+            // EmployeesProjectsCheckedListBox
+            // 
+            this.EmployeesProjectsCheckedListBox.FormattingEnabled = true;
+            this.EmployeesProjectsCheckedListBox.Location = new System.Drawing.Point(368, 102);
+            this.EmployeesProjectsCheckedListBox.Name = "EmployeesProjectsCheckedListBox";
+            this.EmployeesProjectsCheckedListBox.Size = new System.Drawing.Size(383, 259);
+            this.EmployeesProjectsCheckedListBox.TabIndex = 12;
+            // 
+            // EmployeeProjectsLabel
+            // 
+            this.EmployeeProjectsLabel.AutoSize = true;
+            this.EmployeeProjectsLabel.Location = new System.Drawing.Point(365, 79);
+            this.EmployeeProjectsLabel.Name = "EmployeeProjectsLabel";
+            this.EmployeeProjectsLabel.Size = new System.Drawing.Size(104, 13);
+            this.EmployeeProjectsLabel.TabIndex = 13;
+            this.EmployeeProjectsLabel.Text = "Employee\'s Projects:";
+            // 
             // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.EmployeeProjectsLabel);
+            this.Controls.Add(this.EmployeesProjectsCheckedListBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.employeeJobLabel);
@@ -186,6 +207,8 @@
         private System.Windows.Forms.Label employeeJobLabel;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckedListBox EmployeesProjectsCheckedListBox;
+        private System.Windows.Forms.Label EmployeeProjectsLabel;
     }
 }
 

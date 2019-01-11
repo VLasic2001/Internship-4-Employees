@@ -25,7 +25,7 @@ namespace Employees.Presentation
 
         private void AddEmployee(object sender, EventArgs e)
         {
-            var addEmployee = new AddEmployeeForm(EmployeeRepository);
+            var addEmployee = new AddEmployeeForm(EmployeeRepository, ProjectRepository);
             addEmployee.ShowDialog();
         }
 
