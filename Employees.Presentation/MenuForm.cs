@@ -31,7 +31,7 @@ namespace Employees.Presentation
 
         private void ListEmployees(object sender, EventArgs e)
         {
-            var listEmployees =  new ListOfEmployeesForm(EmployeeRepository);
+            var listEmployees =  new ListOfEmployeesForm(EmployeeRepository, ProjectRepository);
             listEmployees.ShowDialog();
         }
 

@@ -16,29 +16,37 @@ namespace Employees.Presentation
     {
         public EmployeeRepository EmployeeRepository { get; set; }
         public List<Employee> Employees { get; set; }
+        public ProjectRepository ProjectRepository { get; set; }
 
-        public ListOfEmployeesForm(EmployeeRepository employeeRepository)
+        public ListOfEmployeesForm(EmployeeRepository employeeRepository, ProjectRepository projectRepository)
         {
             InitializeComponent();
             EmployeeRepository = employeeRepository;
-            ListOfEmployeesCheckedListBox.Items.Clear();
+            ProjectRepository = projectRepository;
+            ListOfEmployeesListBox.Items.Clear();
             Employees = EmployeeRepository.GetAllItems();
             foreach (var employee in Employees)
             {
-                ListOfEmployeesCheckedListBox.Items.Add(employee);
+                ListOfEmployeesListBox.Items.Add(employee);
             }
         }
 
         private void EditEmployee(object sender, EventArgs e)
         {
-            var editEmployee = new EditEmployeeForm(EmployeeRepository, (Employee)ListOfEmployeesCheckedListBox.SelectedItem);
+            var editEmployee = new EditEmployeeForm(EmployeeRepository, (Employee)ListOfEmployeesListBox.SelectedItem);
             editEmployee.ShowDialog();
-            ListOfEmployeesCheckedListBox.Items.Clear();
+            ListOfEmployeesListBox.Items.Clear();
             Employees = EmployeeRepository.GetAllItems();
             foreach (var employee in Employees)
             {
-                ListOfEmployeesCheckedListBox.Items.Add(employee);
+                ListOfEmployeesListBox.Items.Add(employee);
             }
+        }
+
+        private void Details(object sender, EventArgs e)
+        {
+            var employeeDetails = new  EmployeeDetailsForm(EmployeeRepository, (Employee)ListOfEmployeesListBox.SelectedItem, ProjectRepository);
+            employeeDetails.ShowDialog();
         }
     }
 }

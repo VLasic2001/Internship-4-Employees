@@ -16,7 +16,6 @@ namespace Employees.Presentation
     {
         public EmployeeRepository EmployeeRepository { get; set; }
         public Employee Employee { get; set; }
-        public Employee EditedEmployee { get; set; }
 
         public EditEmployeeForm(EmployeeRepository employeeRepository, Employee employee)
         {
@@ -28,15 +27,15 @@ namespace Employees.Presentation
 
         public void SaveChanges(object sender, EventArgs e)
         {
-            CreateEmployee();
-            EmployeeRepository.Employees.Add(EditedEmployee);
             EmployeeRepository.Employees.Remove(Employee);
+            CreateEmployee();
+            EmployeeRepository.Employees.Add(Employee);
             Close();
         }
 
         private void CreateEmployee()
         {
-            EditedEmployee = new Employee(
+            Employee = new Employee(
                 editEmployeeFirstNameTextBox.Text,
                 editEmployeeLastNameTextBox.Text,
                 editEmployeeDateTimePicker.Value,
