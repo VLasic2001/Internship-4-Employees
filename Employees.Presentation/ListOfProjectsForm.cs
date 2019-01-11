@@ -29,6 +29,7 @@ namespace Employees.Presentation
             {
                 ListOfProjectsListBox.Items.Add(project);
             }
+            NumberOfProjects();
         }
 
         private void EditProject(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace Employees.Presentation
             {
                 ListOfProjectsListBox.Items.Add(project);
             }
+            NumberOfProjects();
         }
 
         private void Detalis(object sender, EventArgs e)
@@ -49,6 +51,31 @@ namespace Employees.Presentation
                 var details = new ProjectDetailsForm(EmployeeRepository, (Project)ListOfProjectsListBox.SelectedItem);
                 details.ShowDialog();
             }
+        }
+
+        public void NumberOfProjects()
+        {
+            var numberOfFinishedProjects = 0;
+            var numberOfActiveProjects = 0;
+            var numberOfPlannedProjects = 0;
+            foreach (var project in ProjectRepository.Projects)
+            {
+                if (project.ProjectFinish < DateTime.Now)
+                {
+                    numberOfFinishedProjects++;
+                }
+                else if (project.ProjectStart < DateTime.Now && project.ProjectFinish > DateTime.Now)
+                {
+                    numberOfActiveProjects++;
+                }
+                else if (project.ProjectStart > DateTime.Now)
+                {
+                    numberOfPlannedProjects++;
+                }
+            }
+            FinishedProjectsLabel.Text = $@"Finished projects: {numberOfFinishedProjects}";
+            ActiveProjectsLabel.Text = $@"Active projects: {numberOfActiveProjects}";
+            PlannedProjectsLabel.Text = $@"Planned projects: {numberOfPlannedProjects}";
         }
     }
 }
