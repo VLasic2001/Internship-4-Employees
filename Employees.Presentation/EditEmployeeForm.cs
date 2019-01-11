@@ -16,11 +16,14 @@ namespace Employees.Presentation
     {
         public EmployeeRepository EmployeeRepository { get; set; }
         public Employee Employee { get; set; }
+        public ProjectRepository ProjectRepository { get; set; }
+        public List<Project> Projects { get; set; }
 
-        public EditEmployeeForm(EmployeeRepository employeeRepository, Employee employee)
+        public EditEmployeeForm(EmployeeRepository employeeRepository, Employee employee, ProjectRepository projectRepository)
         {
             InitializeComponent();
             EmployeeRepository = employeeRepository;
+            ProjectRepository = projectRepository;
             Employee = employee;
             SetupForm();
         }
@@ -29,6 +32,7 @@ namespace Employees.Presentation
         {
             EmployeeRepository.Employees.Remove(Employee);
             CreateEmployee();
+            EmployeesAndWorkHoursCalculator();
             EmployeeRepository.Employees.Add(Employee);
             Close();
         }
@@ -51,6 +55,24 @@ namespace Employees.Presentation
             editEmployeeDateTimePicker.Value = Employee.DateOfBirth;
             editEmployeeOibTextBox.Text = Employee.Oib;
             editEmployeeJobComboBox.SelectedIndex = (int)Employee.Job;
+            EmployeesProjectsCheckedListBox.Items.Clear();
+            Projects = ProjectRepository.GetAllItems();
+            foreach (var project in Projects)
+            {
+                EmployeesProjectsCheckedListBox.Items.Add(project);
+            }
+        }
+
+        private void EmployeesAndWorkHoursCalculator()
+        {
+            var employeesProject = EmployeesProjectsCheckedListBox.CheckedItems.OfType<Project>().ToList();
+            foreach (var project in employeesProject)
+            {
+                var employeeHoursOnProject = new EmployeeHoursOnProjectForm(Employee);
+                employeeHoursOnProject.ShowDialog();
+                project.EmployeesOnProjectAndWorkHours.Remove(Employee);
+                project.EmployeesOnProjectAndWorkHours.Add(Employee, employeeHoursOnProject.HoursOnProject);
+            }
         }
     }
 }

@@ -39,33 +39,35 @@
             this.editEmployeeJobComboBox = new System.Windows.Forms.ComboBox();
             this.editEmployeePostitonLabel = new System.Windows.Forms.Label();
             this.editEmployeeSaveChangesButton = new System.Windows.Forms.Button();
+            this.EmployeesProjectsCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.EditEmployeeTitleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // editEmployeeFirstNameTextBox
             // 
-            this.editEmployeeFirstNameTextBox.Location = new System.Drawing.Point(363, 84);
+            this.editEmployeeFirstNameTextBox.Location = new System.Drawing.Point(166, 75);
             this.editEmployeeFirstNameTextBox.Name = "editEmployeeFirstNameTextBox";
-            this.editEmployeeFirstNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.editEmployeeFirstNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.editEmployeeFirstNameTextBox.TabIndex = 0;
             // 
             // editEmployeeLastNameTextBox
             // 
-            this.editEmployeeLastNameTextBox.Location = new System.Drawing.Point(363, 151);
+            this.editEmployeeLastNameTextBox.Location = new System.Drawing.Point(166, 142);
             this.editEmployeeLastNameTextBox.Name = "editEmployeeLastNameTextBox";
-            this.editEmployeeLastNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.editEmployeeLastNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.editEmployeeLastNameTextBox.TabIndex = 1;
             // 
             // editEmployeeOibTextBox
             // 
-            this.editEmployeeOibTextBox.Location = new System.Drawing.Point(363, 314);
+            this.editEmployeeOibTextBox.Location = new System.Drawing.Point(166, 305);
             this.editEmployeeOibTextBox.Name = "editEmployeeOibTextBox";
-            this.editEmployeeOibTextBox.Size = new System.Drawing.Size(100, 20);
+            this.editEmployeeOibTextBox.Size = new System.Drawing.Size(200, 20);
             this.editEmployeeOibTextBox.TabIndex = 2;
             // 
             // editEmployeeFirstNameLabel
             // 
             this.editEmployeeFirstNameLabel.AutoSize = true;
-            this.editEmployeeFirstNameLabel.Location = new System.Drawing.Point(247, 91);
+            this.editEmployeeFirstNameLabel.Location = new System.Drawing.Point(50, 82);
             this.editEmployeeFirstNameLabel.Name = "editEmployeeFirstNameLabel";
             this.editEmployeeFirstNameLabel.Size = new System.Drawing.Size(55, 13);
             this.editEmployeeFirstNameLabel.TabIndex = 3;
@@ -74,7 +76,7 @@
             // editEmployeeLastNameLabel
             // 
             this.editEmployeeLastNameLabel.AutoSize = true;
-            this.editEmployeeLastNameLabel.Location = new System.Drawing.Point(246, 154);
+            this.editEmployeeLastNameLabel.Location = new System.Drawing.Point(49, 145);
             this.editEmployeeLastNameLabel.Name = "editEmployeeLastNameLabel";
             this.editEmployeeLastNameLabel.Size = new System.Drawing.Size(56, 13);
             this.editEmployeeLastNameLabel.TabIndex = 4;
@@ -83,7 +85,7 @@
             // editEmployeeOibLabel
             // 
             this.editEmployeeOibLabel.AutoSize = true;
-            this.editEmployeeOibLabel.Location = new System.Drawing.Point(279, 321);
+            this.editEmployeeOibLabel.Location = new System.Drawing.Point(82, 312);
             this.editEmployeeOibLabel.Name = "editEmployeeOibLabel";
             this.editEmployeeOibLabel.Size = new System.Drawing.Size(23, 13);
             this.editEmployeeOibLabel.TabIndex = 5;
@@ -92,7 +94,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(237, 241);
+            this.label4.Location = new System.Drawing.Point(40, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 6;
@@ -100,7 +102,7 @@
             // 
             // editEmployeeDateTimePicker
             // 
-            this.editEmployeeDateTimePicker.Location = new System.Drawing.Point(363, 234);
+            this.editEmployeeDateTimePicker.Location = new System.Drawing.Point(166, 225);
             this.editEmployeeDateTimePicker.Name = "editEmployeeDateTimePicker";
             this.editEmployeeDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.editEmployeeDateTimePicker.TabIndex = 7;
@@ -112,15 +114,15 @@
             "Programmer",
             "Designer",
             "Accountant"});
-            this.editEmployeeJobComboBox.Location = new System.Drawing.Point(363, 381);
+            this.editEmployeeJobComboBox.Location = new System.Drawing.Point(166, 372);
             this.editEmployeeJobComboBox.Name = "editEmployeeJobComboBox";
-            this.editEmployeeJobComboBox.Size = new System.Drawing.Size(121, 21);
+            this.editEmployeeJobComboBox.Size = new System.Drawing.Size(200, 21);
             this.editEmployeeJobComboBox.TabIndex = 8;
             // 
             // editEmployeePostitonLabel
             // 
             this.editEmployeePostitonLabel.AutoSize = true;
-            this.editEmployeePostitonLabel.Location = new System.Drawing.Point(255, 389);
+            this.editEmployeePostitonLabel.Location = new System.Drawing.Point(58, 380);
             this.editEmployeePostitonLabel.Name = "editEmployeePostitonLabel";
             this.editEmployeePostitonLabel.Size = new System.Drawing.Size(47, 13);
             this.editEmployeePostitonLabel.TabIndex = 9;
@@ -128,7 +130,7 @@
             // 
             // editEmployeeSaveChangesButton
             // 
-            this.editEmployeeSaveChangesButton.Location = new System.Drawing.Point(619, 232);
+            this.editEmployeeSaveChangesButton.Location = new System.Drawing.Point(509, 390);
             this.editEmployeeSaveChangesButton.Name = "editEmployeeSaveChangesButton";
             this.editEmployeeSaveChangesButton.Size = new System.Drawing.Size(135, 29);
             this.editEmployeeSaveChangesButton.TabIndex = 10;
@@ -136,11 +138,31 @@
             this.editEmployeeSaveChangesButton.UseVisualStyleBackColor = true;
             this.editEmployeeSaveChangesButton.Click += new System.EventHandler(this.SaveChanges);
             // 
+            // EmployeesProjectsCheckedListBox
+            // 
+            this.EmployeesProjectsCheckedListBox.FormattingEnabled = true;
+            this.EmployeesProjectsCheckedListBox.Location = new System.Drawing.Point(414, 75);
+            this.EmployeesProjectsCheckedListBox.Name = "EmployeesProjectsCheckedListBox";
+            this.EmployeesProjectsCheckedListBox.Size = new System.Drawing.Size(354, 289);
+            this.EmployeesProjectsCheckedListBox.TabIndex = 11;
+            // 
+            // EditEmployeeTitleLabel
+            // 
+            this.EditEmployeeTitleLabel.AutoSize = true;
+            this.EditEmployeeTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
+            this.EditEmployeeTitleLabel.Location = new System.Drawing.Point(209, -3);
+            this.EditEmployeeTitleLabel.Name = "EditEmployeeTitleLabel";
+            this.EditEmployeeTitleLabel.Size = new System.Drawing.Size(370, 63);
+            this.EditEmployeeTitleLabel.TabIndex = 12;
+            this.EditEmployeeTitleLabel.Text = "Edit employee";
+            // 
             // EditEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.EditEmployeeTitleLabel);
+            this.Controls.Add(this.EmployeesProjectsCheckedListBox);
             this.Controls.Add(this.editEmployeeSaveChangesButton);
             this.Controls.Add(this.editEmployeePostitonLabel);
             this.Controls.Add(this.editEmployeeJobComboBox);
@@ -172,5 +194,7 @@
         private System.Windows.Forms.ComboBox editEmployeeJobComboBox;
         private System.Windows.Forms.Label editEmployeePostitonLabel;
         private System.Windows.Forms.Button editEmployeeSaveChangesButton;
+        private System.Windows.Forms.CheckedListBox EmployeesProjectsCheckedListBox;
+        private System.Windows.Forms.Label EditEmployeeTitleLabel;
     }
 }

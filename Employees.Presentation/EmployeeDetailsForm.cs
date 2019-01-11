@@ -30,7 +30,7 @@ namespace Employees.Presentation
 
         private void EditEmployee(object sender, EventArgs e)
         {
-            var editEmployee = new EditEmployeeForm(EmployeeRepository, Employee);
+            var editEmployee = new EditEmployeeForm(EmployeeRepository, Employee, ProjectRepository);
             editEmployee.ShowDialog();
             Employee = editEmployee.Employee;
             UpdateForm();
