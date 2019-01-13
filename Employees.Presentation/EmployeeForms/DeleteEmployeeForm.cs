@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
-using Employees.Data;
 using Employees.Data.Classes;
-using Employees.Domain;
 using Employees.Domain.Repositories;
 
 namespace Employees.Presentation.EmployeeForms
@@ -26,16 +23,16 @@ namespace Employees.Presentation.EmployeeForms
 
             if (EmployeeListBox.SelectedItem == null)
             {
-                MessageBox.Show("You must select the employee you want to delete", "No employee selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"You must select the employee you want to delete", @"No employee selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var selection = (Employee) EmployeeListBox.SelectedItem;
             if (IsOnlyEmployeeOnAnyProject(selection))
             {
-                MessageBox.Show("Cannot delete selected employee because he is the only employee a project", "Cannot delete employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Cannot delete selected employee because he is the only employee a project", @"Cannot delete employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (MessageBox.Show($"Are you sure you want to delete {selection.FirstName} {selection.LastName}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No) return;
+            if (MessageBox.Show($@"Are you sure you want to delete {selection.FirstName} {selection.LastName}?", @"Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No) return;
             var employeeToDelete = (Employee) EmployeeListBox.SelectedItem;
             DeleteEmployee(employeeToDelete);
             UpdateList();

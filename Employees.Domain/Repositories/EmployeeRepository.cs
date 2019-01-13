@@ -38,10 +38,7 @@ namespace Employees.Domain.Repositories
 
         public void EditEmployeeInRepository(Employee employeToDelete, Employee employeeToAdd)
         {
-            foreach (var project in employeToDelete.ProjectsAndWorkHours.Keys.ToList())
-            {
-                project.RemoveEmployee(employeToDelete);
-            }
+
             Employees.Remove(employeToDelete);
             Employees.Add(employeeToAdd);
         }

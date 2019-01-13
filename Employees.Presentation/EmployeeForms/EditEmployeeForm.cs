@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using Employees.Data;
 using Employees.Data.Classes;
 using Employees.Data.Enums;
-using Employees.Domain;
 using Employees.Domain.Repositories;
+using Employees.Infrastructure;
 
 namespace Employees.Presentation.EmployeeForms
 {
@@ -41,12 +38,11 @@ namespace Employees.Presentation.EmployeeForms
 
         private Employee CreateEmployee()
         {
-            var upperCaseTextInfo = new CultureInfo("en-US", false).TextInfo;
             return new Employee(
-                upperCaseTextInfo.ToTitleCase(FirstNameTextBox.Text.ToLower()),
-                upperCaseTextInfo.ToTitleCase(LastNameTextBox.Text.ToLower()),
+                FirstNameTextBox.Text.UpperCaseFirstLetters(),
+                LastNameTextBox.Text.UpperCaseFirstLetters(),
                 DateOfBirthDateTimePicker.Value,
-                OibTextBox.Text.Replace(" ", ""),
+                OibTextBox.Text.RemoveWhiteSpaces(),
                 (Jobs)JobComboBox.SelectedIndex,
                 ProjectsAndWorkHours
             );
@@ -99,8 +95,8 @@ namespace Employees.Presentation.EmployeeForms
                     }
                     else
                     {
-                        MessageBox.Show("Nothing was input so the employee was not added to the project",
-                            "Input error",
+                        MessageBox.Show(@"Nothing was input so the employee was not added to the project",
+                            @"Input error",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -123,18 +119,18 @@ namespace Employees.Presentation.EmployeeForms
         {
             if (string.IsNullOrWhiteSpace(FirstNameTextBox.Text) || string.IsNullOrWhiteSpace(LastNameTextBox.Text) || string.IsNullOrWhiteSpace(OibTextBox.Text))
             {
-                MessageBox.Show("Fields cannot be empty", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Fields cannot be empty", @"Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             if ((DateTime.Now - DateOfBirthDateTimePicker.Value).TotalDays / 365 < 18)
             {
-                MessageBox.Show("Employee must be over 18 years old", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Employee must be over 18 years old", @"Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (EmployeeRepository.Employees.All(employee => employee.Oib != OibTextBox.Text.Replace(" ", "")) || Employee.Oib == OibTextBox.Text) return true;
-            MessageBox.Show("An employee with this Oib already exists", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (EmployeeRepository.Employees.All(employee => employee.Oib != OibTextBox.Text.RemoveWhiteSpaces()) || Employee.Oib == OibTextBox.Text.RemoveWhiteSpaces()) return true;
+            MessageBox.Show(@"An employee with this Oib already exists", @"Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
 
@@ -156,7 +152,7 @@ namespace Employees.Presentation.EmployeeForms
         private void ItemCheck(object sender, ItemCheckEventArgs e)
         {
             if (e.CurrentValue != CheckState.Indeterminate) return;
-            MessageBox.Show("Cannot remove selected employee from project because he is the only employee on that project", "Cannot delete employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(@"Cannot remove selected employee from project because he is the only employee on that project", @"Cannot delete employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
             e.NewValue = CheckState.Indeterminate;
         }
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Employees.Data.Classes;
 
 namespace Employees.Domain.Repositories
@@ -29,8 +28,6 @@ namespace Employees.Domain.Repositories
 
         public List<Project> GetAllItems() => Projects;
 
-        public void RemoveProject(Project projectToDelete) => Projects.Remove(projectToDelete);
-
         public bool IsListFilled()
         {
             return Projects.Count > 0;
@@ -42,10 +39,6 @@ namespace Employees.Domain.Repositories
 
         public void EditProjectInRepository(Project projectToDelete, Project projectToAdd)
         {
-            foreach (var employee in projectToDelete.EmployeesOnProjectAndWorkHours.Keys.ToList())
-            {
-                employee.RemoveProject(projectToDelete);
-            }
             Projects.Remove(projectToDelete);
             Projects.Add(projectToAdd);
         }

@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Employees.Domain;
 using Employees.Domain.Repositories;
 using Employees.Presentation.EmployeeForms;
 using Employees.Presentation.ProjectForms;
@@ -24,6 +16,7 @@ namespace Employees.Presentation
             InitializeComponent();
             EmployeeRepository = new EmployeeRepository();
             ProjectRepository = new ProjectRepository();
+            LinkEmployeesAndProjects(EmployeeRepository, ProjectRepository);
         }
 
         private void AddEmployee(object sender, EventArgs e)
@@ -36,7 +29,7 @@ namespace Employees.Presentation
         {
             if (!DoesAnEmployeeExist())
             {
-                MessageBox.Show("Employee list is empty", "Cannot open list of employees", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Employee list is empty", @"Cannot open list of employees", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var listEmployees = new ListOfEmployeesForm(EmployeeRepository, ProjectRepository);
@@ -47,7 +40,7 @@ namespace Employees.Presentation
         {
             if (!DoesAnEmployeeExist())
             {
-                MessageBox.Show("Employee list is empty", "Cannot delete an employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Employee list is empty", @"Cannot delete an employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var deleteEmployees = new DeleteEmployeeForm(EmployeeRepository);
@@ -58,7 +51,7 @@ namespace Employees.Presentation
         {
             if (!DoesAnEmployeeExist())
             {
-                MessageBox.Show("Cannot create a project without any employees in the database", "Cannot create project", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Cannot create a project without any employees in the database", @"Cannot create project", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var addProject = new AddProjectForm(ProjectRepository, EmployeeRepository);
@@ -69,7 +62,7 @@ namespace Employees.Presentation
         {
             if (!DoesAProjectExist())
             {
-                MessageBox.Show("Project list is empty", "Cannot open list of projects", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Project list is empty", @"Cannot open list of projects", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var listOfProjects = new ListOfProjectsForm(ProjectRepository, EmployeeRepository);
@@ -80,7 +73,7 @@ namespace Employees.Presentation
         {
             if (!DoesAProjectExist())
             {
-                MessageBox.Show("Project list is empty", "Cannot delete list of projects", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Project list is empty", @"Cannot delete list of projects", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var deleteProject = new DeleteProjectForm(ProjectRepository);
@@ -96,5 +89,27 @@ namespace Employees.Presentation
         {
             return ProjectRepository.IsListFilled();
         }
+
+        private void LinkEmployeesAndProjects(EmployeeRepository employeeRepository,
+            ProjectRepository projectRepository)
+        {
+            employeeRepository.GetAllItems()[0].ProjectsAndWorkHours.Add(projectRepository.GetAllItems()[0], 10);
+            projectRepository.GetAllItems()[0].EmployeesOnProjectAndWorkHours.Add(employeeRepository.GetAllItems()[0], 10);
+
+            employeeRepository.GetAllItems()[0].ProjectsAndWorkHours.Add(projectRepository.GetAllItems()[1], 10);
+            projectRepository.GetAllItems()[1].EmployeesOnProjectAndWorkHours.Add(employeeRepository.GetAllItems()[0], 10);
+
+            employeeRepository.GetAllItems()[0].ProjectsAndWorkHours.Add(projectRepository.GetAllItems()[2], 10);
+            projectRepository.GetAllItems()[2].EmployeesOnProjectAndWorkHours.Add(employeeRepository.GetAllItems()[0], 10);
+
+            employeeRepository.GetAllItems()[1].ProjectsAndWorkHours.Add(projectRepository.GetAllItems()[0], 10);
+            projectRepository.GetAllItems()[0].EmployeesOnProjectAndWorkHours.Add(employeeRepository.GetAllItems()[1], 10);
+
+            employeeRepository.GetAllItems()[1].ProjectsAndWorkHours.Add(projectRepository.GetAllItems()[2], 10);
+            projectRepository.GetAllItems()[2].EmployeesOnProjectAndWorkHours.Add(employeeRepository.GetAllItems()[1], 10);
+
+            employeeRepository.GetAllItems()[2].ProjectsAndWorkHours.Add(projectRepository.GetAllItems()[0], 10);
+            projectRepository.GetAllItems()[0].EmployeesOnProjectAndWorkHours.Add(employeeRepository.GetAllItems()[2], 10);
+            }
     }
 }

@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Employees.Data;
 using Employees.Data.Classes;
-using Employees.Domain;
 using Employees.Domain.Repositories;
 
 namespace Employees.Presentation.ProjectForms
@@ -101,8 +99,8 @@ namespace Employees.Presentation.ProjectForms
                         }
                         else
                         {
-                            MessageBox.Show("Nothing was input so the employee was not added to the project",
-                                "Input error",
+                            MessageBox.Show(@"Nothing was input so the employee was not added to the project",
+                                @"Input error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
@@ -133,14 +131,14 @@ namespace Employees.Presentation.ProjectForms
             if (e.CurrentValue == CheckState.Indeterminate)
             {
                 MessageBox.Show(
-                    "Cannot remove selected employee from project because he is the only employee on that project",
-                    "Cannot remove employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    @"Cannot remove selected employee from project because he is the only employee on that project",
+                    @"Cannot remove employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.NewValue = CheckState.Indeterminate;
             }
             else if (EmployeeListCheckedListBox.CheckedItems.Count == 1 && e.CurrentValue == CheckState.Checked)
             {
-                MessageBox.Show("Cannot remove selected employee from project because he is the only employee on that project",
-                "Cannot remove employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Cannot remove selected employee from project because he is the only employee on that project",
+                    @"Cannot remove employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.NewValue = CheckState.Indeterminate;
             }
         }
@@ -149,21 +147,21 @@ namespace Employees.Presentation.ProjectForms
         {
             if (string.IsNullOrWhiteSpace(ProjectNameTextBox.Text))
             {
-                MessageBox.Show("Project name cannot be empty", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Project name cannot be empty", @"Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (ProjectFinishDateTimePicker.Value < ProjectStartDateTimePicker.Value)
             {
-                MessageBox.Show("Project start date must be before project finish date", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Project start date must be before project finish date", @"Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (EmployeeListCheckedListBox.CheckedItems.Count == 0)
             {
-                MessageBox.Show("Cannot create a project without any employees", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Cannot create a project without any employees", @"Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (ProjectRepository.Projects.All(project => project.ProjectName != ProjectNameTextBox.Text) || ProjectNameTextBox.Text == Project.ProjectName) return true;
-            MessageBox.Show("A project with this name already exists", "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(@"A project with this name already exists", @"Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
 

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using Employees.Data;
 using Employees.Data.Classes;
 using Employees.Data.Enums;
-using Employees.Domain;
 using Employees.Domain.Repositories;
 
 namespace Employees.Presentation.ProjectForms

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Employees.Data;
 using Employees.Data.Classes;
-using Employees.Domain;
 using Employees.Domain.Repositories;
 
 namespace Employees.Presentation.EmployeeForms
@@ -37,8 +34,8 @@ namespace Employees.Presentation.EmployeeForms
         {
             if (Employee.ProjectsAndWorkHours.Keys.Count == 0)
             {
-                MessageBox.Show("Cannot edit employee's work hours because employee does not work on any projects",
-                    "Employee has no active projects",
+                MessageBox.Show(@"Cannot edit employee's work hours because employee does not work on any projects",
+                    @"Employee has no active projects",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }

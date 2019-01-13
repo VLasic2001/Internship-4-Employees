@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Employees.Data;
 using Employees.Data.Classes;
-using Employees.Domain;
 using Employees.Domain.Repositories;
 
 namespace Employees.Presentation.EmployeeForms
@@ -26,7 +24,7 @@ namespace Employees.Presentation.EmployeeForms
         {
             if (ListOfEmployeesListBox.SelectedItem == null)
             {
-                MessageBox.Show("Please select employee you want to edit", "No employee selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Please select employee you want to edit", @"No employee selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             var editEmployee = new EditEmployeeForm(EmployeeRepository, (Employee)ListOfEmployeesListBox.SelectedItem, ProjectRepository);
@@ -38,7 +36,7 @@ namespace Employees.Presentation.EmployeeForms
         {
             if (ListOfEmployeesListBox.SelectedItem == null)
             {
-                MessageBox.Show("Please select employee you want to see the details of", "No employee selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Please select employee you want to see the details of", @"No employee selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             var employeeDetails = new  EmployeeDetailsForm(EmployeeRepository, (Employee)ListOfEmployeesListBox.SelectedItem, ProjectRepository);

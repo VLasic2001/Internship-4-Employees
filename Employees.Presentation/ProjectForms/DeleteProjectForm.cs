@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Employees.Data;
 using Employees.Data.Classes;
-using Employees.Domain;
 using Employees.Domain.Repositories;
 
 namespace Employees.Presentation.ProjectForms
@@ -24,11 +22,11 @@ namespace Employees.Presentation.ProjectForms
         {
             if (ProjectListBox.SelectedItem == null)
             {
-                MessageBox.Show("Select the project you want to delete", "No project selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Select the project you want to delete", @"No project selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var projectToDelete = ProjectListBox.SelectedItem as Project;
-            if (MessageBox.Show($"Are you sure you want to delete {projectToDelete.ProjectName}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No) return;
+            if (MessageBox.Show($"Are you sure you want to delete {projectToDelete.ProjectName}?", @"Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No) return;
             DeleteProject(projectToDelete);
             UpdateList();
         }
@@ -50,7 +48,7 @@ namespace Employees.Presentation.ProjectForms
 
         private void DeleteProject(Project projectToDelete)
         {
-            ProjectRepository.RemoveProject(projectToDelete);
+            ProjectRepository.RemoveProjectFromRepository(projectToDelete);
         }
     }
 }

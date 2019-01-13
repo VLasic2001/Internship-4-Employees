@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Employees.Data;
 using Employees.Data.Classes;
 
 namespace Employees.Presentation
@@ -44,11 +36,11 @@ namespace Employees.Presentation
                     return;
                 }
 
-                MessageBox.Show("Weekly hours cannot be 0", "Invalid weekly hours", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Weekly hours cannot be 0", @"Invalid weekly hours", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            MessageBox.Show("Weekly hours cannot be empty", "Invalid weekly hours", MessageBoxButtons.OK,
+            MessageBox.Show(@"Weekly hours cannot be empty", @"Invalid weekly hours", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }
     }

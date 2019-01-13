@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Employees.Data;
 using Employees.Data.Classes;
-using Employees.Domain;
 using Employees.Domain.Repositories;
 
 namespace Employees.Presentation.ProjectForms
@@ -26,7 +24,7 @@ namespace Employees.Presentation.ProjectForms
         {
             if (ListOfProjectsListBox.SelectedItem == null)
             {
-                MessageBox.Show("Select the project you want to edit", "No project selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Select the project you want to edit", @"No project selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var editProject = new EditProjectForm(ProjectRepository, (Project)ListOfProjectsListBox.SelectedItem, EmployeeRepository);
@@ -38,7 +36,7 @@ namespace Employees.Presentation.ProjectForms
         {
             if (ListOfProjectsListBox.SelectedItem == null)
             {
-                MessageBox.Show("Select the project you want to see the details of", "No project selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Select the project you want to see the details of", @"No project selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var details = new ProjectDetailsForm(EmployeeRepository, (Project) ListOfProjectsListBox.SelectedItem, ProjectRepository);

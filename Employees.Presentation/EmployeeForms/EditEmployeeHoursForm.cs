@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Employees.Data.Classes;
 using Employees.Domain.Repositories;
@@ -49,7 +44,7 @@ namespace Employees.Presentation.EmployeeForms
         {
             if (ProjectsListBox.SelectedItem == null)
             {
-                MessageBox.Show("Select the project you want to edit the hours of and try again", "No Project selected",
+                MessageBox.Show(@"Select the project you want to edit the hours of and try again", @"No Project selected",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -85,8 +80,8 @@ namespace Employees.Presentation.EmployeeForms
             }
             else
             {
-                MessageBox.Show("Nothing was input so the employee was not added to the project",
-                    "Input error",
+                MessageBox.Show(@"Nothing was input so the employee was not added to the project",
+                    @"Input error",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
