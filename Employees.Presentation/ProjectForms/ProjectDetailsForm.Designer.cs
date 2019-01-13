@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Employees.Presentation
+﻿namespace Employees.Presentation.ProjectForms
 {
     partial class ProjectDetailsForm
     {
@@ -35,6 +33,9 @@ namespace Employees.Presentation
             this.ProjectDesignersLabel = new System.Windows.Forms.Label();
             this.ProjectProgrammersLabel = new System.Windows.Forms.Label();
             this.ProjectAccountantsLabel = new System.Windows.Forms.Label();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.EditProjectButton = new System.Windows.Forms.Button();
+            this.EditHoursButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ProjectNameLabel
@@ -84,11 +85,44 @@ namespace Employees.Presentation
             this.ProjectAccountantsLabel.TabIndex = 4;
             this.ProjectAccountantsLabel.Text = "Accountants ()";
             // 
+            // CloseButton
+            // 
+            this.CloseButton.Location = new System.Drawing.Point(634, 415);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(142, 23);
+            this.CloseButton.TabIndex = 29;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.Close);
+            // 
+            // EditProjectButton
+            // 
+            this.EditProjectButton.Location = new System.Drawing.Point(328, 415);
+            this.EditProjectButton.Name = "EditProjectButton";
+            this.EditProjectButton.Size = new System.Drawing.Size(146, 23);
+            this.EditProjectButton.TabIndex = 30;
+            this.EditProjectButton.Text = "Edit project";
+            this.EditProjectButton.UseVisualStyleBackColor = true;
+            this.EditProjectButton.Click += new System.EventHandler(this.EditProject);
+            // 
+            // EditHoursButton
+            // 
+            this.EditHoursButton.Location = new System.Drawing.Point(480, 415);
+            this.EditHoursButton.Name = "EditHoursButton";
+            this.EditHoursButton.Size = new System.Drawing.Size(148, 23);
+            this.EditHoursButton.TabIndex = 31;
+            this.EditHoursButton.Text = "Edit employee\'s hours";
+            this.EditHoursButton.UseVisualStyleBackColor = true;
+            this.EditHoursButton.Click += new System.EventHandler(this.EditHours);
+            // 
             // ProjectDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.EditHoursButton);
+            this.Controls.Add(this.EditProjectButton);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.ProjectAccountantsLabel);
             this.Controls.Add(this.ProjectProgrammersLabel);
             this.Controls.Add(this.ProjectDesignersLabel);
@@ -108,5 +142,8 @@ namespace Employees.Presentation
         private System.Windows.Forms.Label ProjectDesignersLabel;
         private System.Windows.Forms.Label ProjectProgrammersLabel;
         private System.Windows.Forms.Label ProjectAccountantsLabel;
+        private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button EditProjectButton;
+        private System.Windows.Forms.Button EditHoursButton;
     }
 }

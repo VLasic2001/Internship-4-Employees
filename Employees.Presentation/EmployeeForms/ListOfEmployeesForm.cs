@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Employees.Data;
+using Employees.Data.Classes;
 using Employees.Domain;
+using Employees.Domain.Repositories;
 
-namespace Employees.Presentation
+namespace Employees.Presentation.EmployeeForms
 {
     public partial class ListOfEmployeesForm : Form
     {
@@ -23,18 +19,35 @@ namespace Employees.Presentation
             InitializeComponent();
             EmployeeRepository = employeeRepository;
             ProjectRepository = projectRepository;
-            ListOfEmployeesListBox.Items.Clear();
-            Employees = EmployeeRepository.GetAllItems();
-            foreach (var employee in Employees)
-            {
-                ListOfEmployeesListBox.Items.Add(employee);
-            }
+            UpdateForm();
         }
 
         private void EditEmployee(object sender, EventArgs e)
         {
+            if (ListOfEmployeesListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Please select employee you want to edit", "No employee selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             var editEmployee = new EditEmployeeForm(EmployeeRepository, (Employee)ListOfEmployeesListBox.SelectedItem, ProjectRepository);
             editEmployee.ShowDialog();
+            UpdateForm();
+        }
+
+        private void Details(object sender, EventArgs e)
+        {
+            if (ListOfEmployeesListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Please select employee you want to see the details of", "No employee selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var employeeDetails = new  EmployeeDetailsForm(EmployeeRepository, (Employee)ListOfEmployeesListBox.SelectedItem, ProjectRepository);
+            employeeDetails.ShowDialog();
+            UpdateForm();
+        }
+
+        private void UpdateForm()
+        {
             ListOfEmployeesListBox.Items.Clear();
             Employees = EmployeeRepository.GetAllItems();
             foreach (var employee in Employees)
@@ -43,10 +56,9 @@ namespace Employees.Presentation
             }
         }
 
-        private void Details(object sender, EventArgs e)
+        private void Close(object sender, EventArgs e)
         {
-            var employeeDetails = new  EmployeeDetailsForm(EmployeeRepository, (Employee)ListOfEmployeesListBox.SelectedItem, ProjectRepository);
-            employeeDetails.ShowDialog();
+            Close();
         }
     }
 }

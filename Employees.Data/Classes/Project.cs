@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Employees.Data
+namespace Employees.Data.Classes
 {
     public class Project
     {
@@ -23,7 +20,17 @@ namespace Employees.Data
 
         public override string ToString()
         {
-            return $"{ProjectName} - {EmployeesOnProjectAndWorkHours.Count} employees working on this project.";
+            return $"{ProjectName} - {EmployeesOnProjectAndWorkHours.Count} employee(s) working on this project.";
+        }
+
+        public void RemoveEmployee(Employee employeeToRemove)
+        {
+            EmployeesOnProjectAndWorkHours.Remove(employeeToRemove);
+        }
+
+        public void AddEmployee(Employee employeeToAdd, int numberOfHours)
+        {
+            EmployeesOnProjectAndWorkHours.Add(employeeToAdd, numberOfHours);
         }
     }
 }

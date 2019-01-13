@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Employees.Data;
+using Employees.Data.Classes;
 using Employees.Domain;
+using Employees.Domain.Repositories;
 
-namespace Employees.Presentation
+namespace Employees.Presentation.ProjectForms
 {
     public partial class ListOfProjectsForm : Form
     {
@@ -23,34 +19,31 @@ namespace Employees.Presentation
             InitializeComponent();
             ProjectRepository = projectRepository;
             EmployeeRepository = employeeRepository;
-            ListOfProjectsListBox.Items.Clear();
-            Projects = ProjectRepository.GetAllItems();
-            foreach (var project in Projects)
-            {
-                ListOfProjectsListBox.Items.Add(project);
-            }
-            NumberOfProjects();
+            UpdateForm();
         }
 
         private void EditProject(object sender, EventArgs e)
         {
+            if (ListOfProjectsListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Select the project you want to edit", "No project selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var editProject = new EditProjectForm(ProjectRepository, (Project)ListOfProjectsListBox.SelectedItem, EmployeeRepository);
             editProject.ShowDialog();
-            ListOfProjectsListBox.Items.Clear();
-            Projects = ProjectRepository.GetAllItems();
-            foreach (var project in Projects)
-            {
-                ListOfProjectsListBox.Items.Add(project);
-            }
-            NumberOfProjects();
+            UpdateForm();
         }
 
         private void Detalis(object sender, EventArgs e)
         {
+            if (ListOfProjectsListBox.SelectedItem == null)
             {
-                var details = new ProjectDetailsForm(EmployeeRepository, (Project)ListOfProjectsListBox.SelectedItem);
-                details.ShowDialog();
+                MessageBox.Show("Select the project you want to see the details of", "No project selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            var details = new ProjectDetailsForm(EmployeeRepository, (Project) ListOfProjectsListBox.SelectedItem, ProjectRepository);
+            details.ShowDialog();
+            UpdateForm();
         }
 
         public void NumberOfProjects()
@@ -76,6 +69,22 @@ namespace Employees.Presentation
             FinishedProjectsLabel.Text = $@"Finished projects: {numberOfFinishedProjects}";
             ActiveProjectsLabel.Text = $@"Active projects: {numberOfActiveProjects}";
             PlannedProjectsLabel.Text = $@"Planned projects: {numberOfPlannedProjects}";
+        }
+
+        private void UpdateForm()
+        {
+            ListOfProjectsListBox.Items.Clear();
+            Projects = ProjectRepository.GetAllItems();
+            foreach (var project in Projects)
+            {
+                ListOfProjectsListBox.Items.Add(project);
+            }
+            NumberOfProjects();
+        }
+
+        private void Close(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

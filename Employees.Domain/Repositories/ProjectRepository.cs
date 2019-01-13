@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Employees.Data;
+using Employees.Data.Classes;
 
-namespace Employees.Domain
+namespace Employees.Domain.Repositories
 {
     public class ProjectRepository
     {
@@ -32,5 +30,24 @@ namespace Employees.Domain
         public List<Project> GetAllItems() => Projects;
 
         public void RemoveProject(Project projectToDelete) => Projects.Remove(projectToDelete);
+
+        public bool IsListFilled()
+        {
+            return Projects.Count > 0;
+        }
+
+        public void RemoveProjectFromRepository(Project projectToDelete) => Projects.Remove(projectToDelete);
+
+        public void AddProjectToRepository(Project projectToADd) => Projects.Add(projectToADd);
+
+        public void EditProjectInRepository(Project projectToDelete, Project projectToAdd)
+        {
+            foreach (var employee in projectToDelete.EmployeesOnProjectAndWorkHours.Keys.ToList())
+            {
+                employee.RemoveProject(projectToDelete);
+            }
+            Projects.Remove(projectToDelete);
+            Projects.Add(projectToAdd);
+        }
     }
 }

@@ -46,65 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmployeeForm.cs">
+    <Compile Include="EmployeeForms\AddEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEmployeeForm.Designer.cs">
+    <Compile Include="EmployeeForms\AddEmployeeForm.Designer.cs">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddProjectForm.cs">
+    <Compile Include="EmployeeForms\DeleteEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddProjectForm.Designer.cs">
-      <DependentUpon>AddProjectForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteEmployeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeleteEmployeeForm.Designer.cs">
+    <Compile Include="EmployeeForms\DeleteEmployeeForm.Designer.cs">
       <DependentUpon>DeleteEmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeleteProjectForm.cs">
+    <Compile Include="EmployeeForms\EditEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteProjectForm.Designer.cs">
-      <DependentUpon>DeleteProjectForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditEmployeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditEmployeeForm.Designer.cs">
+    <Compile Include="EmployeeForms\EditEmployeeForm.Designer.cs">
       <DependentUpon>EditEmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditProjectForm.cs">
+    <Compile Include="EmployeeForms\EditEmployeeHoursForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditProjectForm.Designer.cs">
-      <DependentUpon>EditProjectForm.cs</DependentUpon>
+    <Compile Include="EmployeeForms\EditEmployeeHoursForm.Designer.cs">
+      <DependentUpon>EditEmployeeHoursForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeDetailsForm.cs">
+    <Compile Include="EmployeeForms\EmployeeDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeDetailsForm.Designer.cs">
+    <Compile Include="EmployeeForms\EmployeeDetailsForm.Designer.cs">
       <DependentUpon>EmployeeDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeForms\ListOfEmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForms\ListOfEmployeesForm.Designer.cs">
+      <DependentUpon>ListOfEmployeesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeHoursOnProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeHoursOnProjectForm.Designer.cs">
+    <Compile Include="EmployeeHoursOnProjectForm.designer.cs">
       <DependentUpon>EmployeeHoursOnProjectForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListOfEmployeesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListOfEmployeesForm.Designer.cs">
-      <DependentUpon>ListOfEmployeesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListOfProjectsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListOfProjectsForm.Designer.cs">
-      <DependentUpon>ListOfProjectsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
@@ -113,47 +95,83 @@
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProjectDetailsForm.cs">
+    <Compile Include="ProjectForms\AddProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProjectDetailsForm.Designer.cs">
+    <Compile Include="ProjectForms\AddProjectForm.Designer.cs">
+      <DependentUpon>AddProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectForms\DeleteProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectForms\DeleteProjectForm.Designer.cs">
+      <DependentUpon>DeleteProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectForms\EditProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectForms\EditProjectForm.Designer.cs">
+      <DependentUpon>EditProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectForms\EditProjectHoursForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectForms\EditProjectHoursForm.Designer.cs">
+      <DependentUpon>EditProjectHoursForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectForms\ListOfProjectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectForms\ListOfProjectsForm.Designer.cs">
+      <DependentUpon>ListOfProjectsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectForms\ProjectDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectForms\ProjectDetailsForm.Designer.cs">
       <DependentUpon>ProjectDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddEmployeeForm.resx">
+    <EmbeddedResource Include="EmployeeForms\AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddProjectForm.resx">
-      <DependentUpon>AddProjectForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeleteEmployeeForm.resx">
+    <EmbeddedResource Include="EmployeeForms\DeleteEmployeeForm.resx">
       <DependentUpon>DeleteEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteProjectForm.resx">
-      <DependentUpon>DeleteProjectForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditEmployeeForm.resx">
+    <EmbeddedResource Include="EmployeeForms\EditEmployeeForm.resx">
       <DependentUpon>EditEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditProjectForm.resx">
-      <DependentUpon>EditProjectForm.cs</DependentUpon>
+    <EmbeddedResource Include="EmployeeForms\EditEmployeeHoursForm.resx">
+      <DependentUpon>EditEmployeeHoursForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeDetailsForm.resx">
+    <EmbeddedResource Include="EmployeeForms\EmployeeDetailsForm.resx">
       <DependentUpon>EmployeeDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForms\ListOfEmployeesForm.resx">
+      <DependentUpon>ListOfEmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeHoursOnProjectForm.resx">
       <DependentUpon>EmployeeHoursOnProjectForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListOfEmployeesForm.resx">
-      <DependentUpon>ListOfEmployeesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListOfProjectsForm.resx">
-      <DependentUpon>ListOfProjectsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProjectDetailsForm.resx">
+    <EmbeddedResource Include="ProjectForms\AddProjectForm.resx">
+      <DependentUpon>AddProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectForms\DeleteProjectForm.resx">
+      <DependentUpon>DeleteProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectForms\EditProjectForm.resx">
+      <DependentUpon>EditProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectForms\EditProjectHoursForm.resx">
+      <DependentUpon>EditProjectHoursForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectForms\ListOfProjectsForm.resx">
+      <DependentUpon>ListOfProjectsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectForms\ProjectDetailsForm.resx">
       <DependentUpon>ProjectDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

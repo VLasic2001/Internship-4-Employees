@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.cs" />
-    <Compile Include="Jobs.cs" />
-    <Compile Include="Project.cs" />
+    <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Enums\Jobs.cs" />
+    <Compile Include="Classes\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
